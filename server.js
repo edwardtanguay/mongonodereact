@@ -8,9 +8,9 @@ server.set('views', './views');
 
 server.get('/', (req, res) => {
 	res.render('index', {
-	  content: '...' 
+		content: '...' 
 	});
-  });
+	});
 
 server.use(express.static('public'));
 
