@@ -10,7 +10,7 @@ server.get('/', (req, res) => {
 	res.render('index', {
 		content: '...' 
 	});
-	});
+});
 
 server.use(express.static('public'));
 
