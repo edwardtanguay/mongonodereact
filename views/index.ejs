@@ -1,14 +1,3 @@
 <%- include('header') %>
-<div>
-	Name: <%= userName %>
-</div>
-<div>
-	HTML encoded: <%=htmlContent%>
-</div>
-<div>
-	HTML rendered: <%-htmlContent%>
-</div>
-<div>
-	Random number: <%= Math.floor(Math.random() * 100) + 1 %>
-</div>
+<div id="root"><%- content -%></div>
 <%- include('footer') %>

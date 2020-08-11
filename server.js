@@ -7,11 +7,10 @@ server.set('view engine', 'ejs');
 server.set('views', './views');
 
 server.get('/', (req, res) => {
-	res.render('index.ejs', {
-		userName: 'Dirk Baumer',
-		htmlContent: 'This is a <b>description</b>.'
+	res.render('index', {
+	  content: '...' 
 	});
-});
+  });
 
 server.use(express.static('public'));
 
