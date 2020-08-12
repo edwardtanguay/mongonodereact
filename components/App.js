@@ -2,6 +2,7 @@ import React from 'react';
 //import ReactDOM from 'react-dom';
 import Header from '../components/Header';
 
+
 class App extends React.Component {
 	state = {
 		pageHeader: 'OneSearch',
@@ -11,6 +12,14 @@ class App extends React.Component {
 	// 	super(props);
 	// 	this.state = { test: 42 };
 	// }
+
+	componentDidMount() {
+		console.log('did mount');
+	}
+
+	componentWillUnmount() {
+		console.log('will unmount');
+	}
 	render() {
 		return (
 			<div className="app">
