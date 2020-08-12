@@ -2,16 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
-const App = (props) => {
+const Header = ({ title }) => {
 	return (
-		<h2 className="text-center">
-			{props.appTitle}
+		<h2 className="header text-center">
+			{title}
 		</h2>
 	);
 };
 
-App.prototypes = {
-	appTitle: PropTypes.string.isRequired
+const App = () => {
+	return (
+		<div className="app">
+			<Header title="Search" />
+			<div>
+				...
+			</div>
+		</div>
+	);
+};
+
+Header.prototypes = {
+	title: PropTypes.string.isRequired
 };
 
 App.defaultProps = {
@@ -19,6 +30,6 @@ App.defaultProps = {
 };
 
 ReactDOM.render(
-	<App/>,
+	<App />,
 	document.getElementById('root')
 );
