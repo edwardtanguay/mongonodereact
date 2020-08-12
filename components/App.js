@@ -31,7 +31,7 @@ class App extends React.Component {
 				<Header title={this.state.pageHeader} />
 				<div>
 					{this.props.flashcards.map(flashcard =>
-						<Flashcard {...flashcard} />
+						<Flashcard {...flashcard} key={flashcard.id} />
 						)}
 					{/* <Flashcard {...this.props.flashcards[121]}></Flashcard> */}
 					{/* <Flashcard front={flashcard.front}></Flashcard> */}
