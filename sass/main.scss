@@ -1,0 +1,23 @@
+body {
+	padding: 20px;
+}
+
+.flashcard {
+	margin          : 0 0 10px 0;
+	border          : 1px solid #ddd;
+	background-color: #eee;
+	padding         : 5px;
+	border-radius   : 5px;
+}
+
+.flashcard .front {
+	font-weight: bold;
+}
+
+.flashcard .back {
+	font-style: italic;
+}
+
+.flashcard .category {
+	font-variant: small-caps;
+	color       : #aaa;
