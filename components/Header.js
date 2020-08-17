@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Header = ({ title }) => {
 	return (
-		<h2 className="header text-center">
+		<h2 className="header text-left">
 			{title}
 		</h2>
 	);

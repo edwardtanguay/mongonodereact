@@ -1,9 +1,12 @@
 import config from './config';
 import express from 'express';
+import apiRouter from './api';
 import sassMiddleWare from 'node-sass-middleware';
 import path from 'path';
 
 const server = express();
+
+
 
 server.set('view engine', 'ejs');
 server.set('views', './views');
@@ -19,6 +22,8 @@ server.get('/', (req, res) => {
 		content: '...'
 	});
 });
+
+server.use('/api', apiRouter);
 
 server.use(express.static('public'));
 

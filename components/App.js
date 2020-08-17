@@ -2,21 +2,30 @@ import React from 'react';
 //import ReactDOM from 'react-dom';
 import Header from '../components/Header';
 import Flashcard from './Flashcard';
+import axios from 'axios';
 
+const flashcards = require('../src/itemType_flashcards.json');
 
 class App extends React.Component {
 	state = {
-		pageHeader: 'OneSearch',
-		leftContent: 'Type here.'
+		pageHeader: 'test',
+		flashcards: []
 	};
 	// constructor(props) {
 	// 	super(props);
 	// 	this.state = { test: 42 };
 	// }
 
-	// componentDidMount() {
-	// 	console.log('did mount');
-	// }
+	componentDidMount() {
+		axios.get('/api/fc')
+			.then(rsp => {
+				console.log(rsp.data.flashcards);
+				this.setState({
+					flashcards: rsp.data.flashcards
+				});
+			})
+			.catch(console.error);
+	}
 
 	// componentWillUnmount() {
 	// 	console.log('will unmount');
@@ -30,9 +39,7 @@ class App extends React.Component {
 			<div className="app">
 				<Header title={this.state.pageHeader} />
 				<div>
-					{this.props.flashcards.map(flashcard =>
-						<Flashcard {...flashcard} key={flashcard.id} />
-						)}
+					{this.state.flashcards.map(flashcard => <Flashcard {...flashcard} key={flashcard.id} />)}
 					{/* <Flashcard {...this.props.flashcards[121]}></Flashcard> */}
 					{/* <Flashcard front={flashcard.front}></Flashcard> */}
 				</div>
